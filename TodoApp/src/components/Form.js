@@ -1,0 +1,48 @@
+import React from 'react';
+
+const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
+    const inputTextHandler = (e) => {
+        setInputText(e.target.value);
+    };
+
+    const submitTodoHandler = (e) => {
+        e.preventDefault();
+        setTodos([...todos,
+            {text: inputText, completed: false, id: Math.random() * 1000 },
+        ]);
+        setInputText("");
+    };
+
+    const controlTextInput = (e) => {
+        if(inputText === ""){
+            alert("Please Enter Your Todo!");
+        }
+    };
+
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
+    }
+
+    return(
+        <form>
+            <input 
+             value={inputText}
+             onChange={inputTextHandler} 
+             type="text" 
+             className="todo-input" 
+             />
+            <button onClick={submitTodoHandler} onClickCapture={controlTextInput} className="todo-button" type="submit">
+            <i className="far fa-calendar-check"></i>
+            </button>
+            <div className="select">
+                <select onChange={statusHandler} name="todos" className="filter-todo">
+                    <option value="All">All</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Uncompleted">Uncompleted</option>
+                </select>
+            </div>
+        </form>
+    );
+};
+
+export default Form;
