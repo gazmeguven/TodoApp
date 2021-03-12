@@ -1,11 +1,1 @@
-## TodoApp
-
-**Added Features**
-
-+ En az bir Functional Component kullanılması
-+ En az bir Class Component kullanılması
-+ Componentlerin ayrı .js uzantılı dosyalarda geliştirilmesi
-	+ Component'in export edilmesi
-	+ İmport edilerek kullanılması
-+ State ve/veya useState kullanılması
-+ Bootstrap gibi css kütüphaneleri isteğe bağlı kullanılabilir
+## ToDoApp with using ReactJS
